@@ -89,7 +89,7 @@ class MemTempNG(plugins.Plugin):
             try:
                 value = getattr(self, self.ALLOWED_FIELDS[field])()
             except (OSError, ValueError) as error:
-                logging.warning('[MemTemp_HUB_v2] Cannot update %s: %s', field, error)
+                logging.warning('[MemTemp_NG] Cannot update %s: %s', field, error)
                 value = '-'
             ui.set('memtemp_%s' % field, value)
 
